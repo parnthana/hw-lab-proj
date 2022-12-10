@@ -1,0 +1,106 @@
+Copyright 1986-2022 Xilinx, Inc. All Rights Reserved.
+------------------------------------------------------------------------------------
+| Tool Version : Vivado v.2022.2 (win64) Build 3671981 Fri Oct 14 05:00:03 MDT 2022
+| Date         : Sat Dec 10 13:21:30 2022
+| Host         : tnptw-windows running 64-bit major release  (build 9200)
+| Command      : report_control_sets -verbose -file system_control_sets_placed.rpt
+| Design       : system
+| Device       : xc7a35t
+------------------------------------------------------------------------------------
+
+Control Set Information
+
+Table of Contents
+-----------------
+1. Summary
+2. Histogram
+3. Flip-Flop Distribution
+4. Detailed Control Set Information
+
+1. Summary
+----------
+
++----------------------------------------------------------+-------+
+|                          Status                          | Count |
++----------------------------------------------------------+-------+
+| Total control sets                                       |    28 |
+|    Minimum number of control sets                        |    28 |
+|    Addition due to synthesis replication                 |     0 |
+|    Addition due to physical synthesis replication        |     0 |
+| Unused register locations in slices containing registers |   131 |
++----------------------------------------------------------+-------+
+* Control sets can be merged at opt_design using control_set_merge or merge_equivalent_drivers
+** Run report_qor_suggestions for automated merging and remapping suggestions
+
+
+2. Histogram
+------------
+
++--------------------+-------+
+|       Fanout       | Count |
++--------------------+-------+
+| Total control sets |    28 |
+| >= 0 to < 4        |    11 |
+| >= 4 to < 6        |     3 |
+| >= 6 to < 8        |     1 |
+| >= 8 to < 10       |     3 |
+| >= 10 to < 12      |     4 |
+| >= 12 to < 14      |     0 |
+| >= 14 to < 16      |     0 |
+| >= 16              |     6 |
++--------------------+-------+
+* Control sets can be remapped at either synth_design or opt_design
+
+
+3. Flip-Flop Distribution
+-------------------------
+
++--------------+-----------------------+------------------------+-----------------+--------------+
+| Clock Enable | Synchronous Set/Reset | Asynchronous Set/Reset | Total Registers | Total Slices |
++--------------+-----------------------+------------------------+-----------------+--------------+
+| No           | No                    | No                     |              62 |           31 |
+| No           | No                    | Yes                    |               4 |            3 |
+| No           | Yes                   | No                     |              50 |           17 |
+| Yes          | No                    | No                     |              26 |           12 |
+| Yes          | No                    | Yes                    |              20 |            5 |
+| Yes          | Yes                   | No                     |              75 |           38 |
++--------------+-----------------------+------------------------+-----------------+--------------+
+
+
+4. Detailed Control Set Information
+-----------------------------------
+
++--------------------------------------+---------------------------------+---------------------------------+------------------+----------------+--------------+
+|             Clock Signal             |          Enable Signal          |         Set/Reset Signal        | Slice Load Count | Bel Load Count | Bels / Slice |
++--------------------------------------+---------------------------------+---------------------------------+------------------+----------------+--------------+
+|  baud_BUFG                           | receiver/data_out[2]            |                                 |                1 |              1 |         1.00 |
+|  baud_BUFG                           | receiver/data_out[4]            |                                 |                1 |              1 |         1.00 |
+|  baud_BUFG                           | receiver/data_out[1]            |                                 |                1 |              1 |         1.00 |
+|  baud_BUFG                           | receiver/data_out[7]            |                                 |                1 |              1 |         1.00 |
+|  baud_BUFG                           | receiver/data_out[0]            |                                 |                1 |              1 |         1.00 |
+|  baud_BUFG                           | receiver/data_out[3]            |                                 |                1 |              1 |         1.00 |
+|  baud_BUFG                           | receiver/data_out[5]            |                                 |                1 |              1 |         1.00 |
+|  baud_BUFG                           | receiver/data_out[6]            |                                 |                1 |              1 |         1.00 |
+|  baud_BUFG                           | transmitter/bit_out             | transmitter/bit_out0            |                1 |              1 |         1.00 |
+|  lout2_reg[1]_i_1_n_0                |                                 | cal/value_in[17]                |                1 |              1 |         1.00 |
+|  cal/E[0]                            |                                 | cal/Q[0]                        |                1 |              1 |         1.00 |
+|  baud_BUFG                           | receiver/counter_reg[2]_0[1]    | receiver/state_reg[0][0]        |                1 |              4 |         4.00 |
+|  clk_IBUF_BUFG                       |                                 | sp/reset                        |                3 |              4 |         1.33 |
+|  clk_IBUF_BUFG                       |                                 |                                 |                2 |              5 |         2.50 |
+|  vga_control/cdr/data_reg[7]_i_1_n_0 |                                 |                                 |                3 |              7 |         2.33 |
+|  baud_BUFG                           |                                 | receiver/count[7]_i_1_n_0       |                4 |              8 |         2.00 |
+|  baud_BUFG                           |                                 | transmitter/count[7]_i_1__0_n_0 |                3 |              8 |         2.67 |
+|  baud_BUFG                           | transmitter/temp[7]_i_1_n_0     |                                 |                2 |              8 |         4.00 |
+|  baud_BUFG                           | receiver/received_reg_1[0]      |                                 |                2 |             10 |         5.00 |
+|  clk_IBUF_BUFG                       | vga_sync/h_count_reg[9]_i_1_n_0 | sp/reset                        |                2 |             10 |         5.00 |
+|  clk_IBUF_BUFG                       | vga_sync/v_count_reg0           | sp/reset                        |                3 |             10 |         3.33 |
+|  vga_sync/prev_reg[31]               |                                 |                                 |                6 |             11 |         1.83 |
+|  baud_BUFG                           | receiver/E[0]                   | receiver/SR[0]                  |                6 |             18 |         3.00 |
+|  receiver/z_reg_0[0]                 |                                 |                                 |                9 |             18 |         2.00 |
+|  baud_BUFG                           | receiver/counter_reg[2]_0[0]    | receiver/state_reg[0][0]        |                6 |             20 |         3.33 |
+|  baud_BUFG                           |                                 |                                 |               11 |             21 |         1.91 |
+|  baud_BUFG                           | led_OBUF[3]                     | sp/reset                        |               24 |             32 |         1.33 |
+|  clk_IBUF_BUFG                       |                                 | baudrate/clear                  |                8 |             32 |         4.00 |
++--------------------------------------+---------------------------------+---------------------------------+------------------+----------------+--------------+
+
+
